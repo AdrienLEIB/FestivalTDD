@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import dao.FestivalDAO;
 import model.Festival;
+import model.Scene;
 
 public class FestivalDaoTest {
 
@@ -33,6 +34,14 @@ public class FestivalDaoTest {
 		festivalDao.getAllFestivals().add(festival);
 		assertTrue(festivalDao.deleteFestivalFromList(festival));
 
+	}
+
+	@Test
+	public void addSceneToFestivalTest() {
+		festivalDao = new FestivalDAO();
+		Festival f = new Festival();
+		Scene s = new Scene();
+		assertTrue(festivalDao.addSceneToFestival(s, f));
 	}
 
 }

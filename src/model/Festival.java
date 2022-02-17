@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Festival {
@@ -7,7 +8,7 @@ public class Festival {
 	String name;
 
 	public Festival() {
-
+		scenes = new ArrayList<>();
 	}
 
 	public Festival(List<Scene> scenes, String name) {

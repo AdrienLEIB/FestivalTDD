@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.Data;
 import model.Festival;
+import model.Scene;
 
 public class FestivalDAO {
 
@@ -46,6 +47,10 @@ public class FestivalDAO {
 		}
 
 		return fToReturn;
+	}
+
+	public boolean addSceneToFestival(Scene scene, Festival festival) {
+		return festival.getScenes().add(scene);
 	}
 
 }
