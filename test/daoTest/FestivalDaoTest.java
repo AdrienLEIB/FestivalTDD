@@ -15,14 +15,14 @@ public class FestivalDaoTest {
 	@Test
 	public void getFestivalsTestNotNull() {
 		festivalDao = new FestivalDAO();
-		assertNotNull(festivalDao.getFestivals());
+		assertNotNull(festivalDao.getAllFestivals());
 	}
 
 	@Test
 	public void addFestivalToListTestOK() {
 		festivalDao = new FestivalDAO();
 		Festival festival = new Festival();
-		assertTrue(festivalDao.addFestivalToList(festival));
+		assertTrue(festivalDao.addFestivaltoList(festival));
 
 	}
 
@@ -30,8 +30,8 @@ public class FestivalDaoTest {
 	public void deleteFestivalFromListTestOK() {
 		festivalDao = new FestivalDAO();
 		Festival festival = new Festival();
-		festivalDao.getFestivals().add(festival);
-		assertTrue(festivalDao.deleteFestivalToList(festival));
+		festivalDao.getAllFestivals().add(festival);
+		assertTrue(festivalDao.deleteFestivalFromList(festival));
 
 	}
 
