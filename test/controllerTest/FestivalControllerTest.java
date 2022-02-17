@@ -1,6 +1,7 @@
 package controllerTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,16 +31,28 @@ class FestivalControllerTest {
 	void deleteFestivalTestOk() {
 		// GIVEN
 		String name = "Penish";
-		festivalController.createFestival(name);
-		Festival lastFestival = Data.getFestivals() //
-				.get(Data.getFestivals().size() - 1);
-		assertEquals(name, lastFestival.getName());
+		Festival festival = new Festival(name);
+		Data.getFestivals().add(festival);
 
 		// WHEN
 		festivalController.deleteFestivalByName(name);
 
 		// THEN
-		;
+		assertFalse(Data.getFestivals().contains(festival));
+	}
+
+	@Test
+	void deleteFestivalTestKo() {
+		// GIVEN
+		String name = "Penish";
+		Festival festival = new Festival(name);
+		Data.getFestivals().add(festival);
+
+		// WHEN
+		boolean result = festivalController.deleteFestivalByName("PasUnePenish");
+
+		// THEN
+		assertFalse(result);
 	}
 
 }

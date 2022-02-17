@@ -35,4 +35,17 @@ public class FestivalDAO {
 		return (Data.getFestivals().remove(festival));
 	}
 
+	public Festival getFestivalByName(String name) {
+
+		Festival fToReturn = null;
+
+		for (Festival f : Data.getFestivals()) {
+			if (f.getName().equals(name)) {
+				fToReturn = f;
+			}
+		}
+
+		return fToReturn;
+	}
+
 }

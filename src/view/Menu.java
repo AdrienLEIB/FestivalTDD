@@ -14,8 +14,9 @@ public class Menu {
 	public void choix() {
 		System.out.println("Que voulez vous faire ?");
 		System.out.println("1 Creer un festival");
-		System.out.println("2 Ajouter une scene à un festival");
-		System.out.println("3 Ajouter un groupe à une scene");
+		System.out.println("2 Afficher la liste des festivals");
+		System.out.println("3 Ajouter une scene à un festival");
+		System.out.println("4 Ajouter un groupe à une scene");
 
 		switch (Utilitaires.saisieString()) {
 		case "1":

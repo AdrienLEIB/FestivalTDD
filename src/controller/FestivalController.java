@@ -21,15 +21,16 @@ public class FestivalController {
 
 	}
 
-	public void deleteFestivalByName(String name) {
+	public boolean deleteFestivalByName(String name) {
 
-		Festival festival = new Festival(name);
-		boolean contains = festivalDao.getAllFestivals().contains(festival);
+		Festival festivalByName = festivalDao.getFestivalByName(name);
 
-		if (contains) {
-			festivalDao.deleteFestivalFromList(festival);
+		if (festivalByName != null) {
+			festivalDao.deleteFestivalFromList(festivalByName);
+			return true;
 		}
 
+		return false;
 	}
 
 }
