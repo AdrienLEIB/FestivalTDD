@@ -6,10 +6,10 @@ import java.util.List;
 public class Scene {
 
 	List<Groupe> groupes;
-	String name;
+	public String name;
 
 	public Scene() {
-
+		groupes = new ArrayList<Groupe>();
 	}
 
 	public Scene(String name) {
