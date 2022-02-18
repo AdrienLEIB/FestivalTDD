@@ -5,20 +5,19 @@ import java.util.List;
 
 public class Festival {
 	List<Scene> scenes;
-	String name;
+	public String name;
 
 	public Festival() {
-		scenes = new ArrayList<>();
-	}
-
-	public Festival(List<Scene> scenes, String name) {
-		super();
-		this.scenes = scenes;
-		this.name = name;
+		scenes = new ArrayList<Scene>();
 	}
 
 	public Festival(String name) {
-		super();
+		this();
+		this.name = name;
+	}
+
+	public Festival(List<Scene> scenes, String name) {
+		this.scenes = scenes;
 		this.name = name;
 	}
 

@@ -28,8 +28,24 @@ public class Menu {
 
 			break;
 		case "2":
+
 			break;
 		case "3":
+			System.out.println("3 Ajout scene à festival");
+			System.out.println(" A quel festival voulez vous ajouter une scene, donner le .");
+			fc.printFestivals();
+			String nomFestival = Utilitaires.saisieString();
+			System.out.println();
+			String nomScene = Utilitaires.saisieString();
+			fc.createFestival(nomScene);
+			break;
+		case "4":
+			System.out.println("4 Supp scène d'un festival");
+			System.out.println("De quel festival voulez vous enlever une sc�ne, donnez le nom :");
+			fc.printFestivals();
+			nomFestival = Utilitaires.saisieString();
+			System.out.println("Quelle scène enlever, donnez le nom :");
+			nomScene = Utilitaires.saisieString();
 			break;
 
 		}

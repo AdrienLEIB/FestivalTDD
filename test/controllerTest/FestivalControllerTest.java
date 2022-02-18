@@ -2,12 +2,14 @@ package controllerTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
 import controller.FestivalController;
 import model.Data;
 import model.Festival;
+import model.Scene;
 
 class FestivalControllerTest {
 
@@ -53,6 +55,23 @@ class FestivalControllerTest {
 
 		// THEN
 		assertFalse(result);
+	}
+
+	@Test
+	void createSceneAndAddToFestivalTest() {
+		// GIVEN
+		Festival f = new Festival("Penish");
+		Data.getFestivals().add(f);
+		Data.getFestivals().get(0).getScenes().add(new Scene("PasPenish"));
+
+		// WHEN
+		festivalController.createSceneAndAddToFestival("Scenene", "Penish");
+
+		// THEN
+		Festival fResult = Data.getFestivals().get(Data.getFestivals().size() - 1);
+		assertTrue(fResult.getScenes() //
+				.get(fResult.getScenes().size() - 1) //
+				.getName().equals("Scenene"));
 	}
 
 }

@@ -53,4 +53,17 @@ public class FestivalDAO {
 		return festival.getScenes().add(scene);
 	}
 
+	public Festival getLastFestivalByName(String nameFestival) {
+		Festival fToBeReturned = null;
+		for (Festival festival : getAllFestivals()) {
+			if (festival.name.equals(nameFestival))
+				fToBeReturned = festival;
+		}
+		return fToBeReturned;
+	}
+
+	public boolean deleteSceneFromFestival(Scene scene, Festival festival) {
+		return festival.getScenes().remove(scene);
+	}
+
 }
