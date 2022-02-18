@@ -62,8 +62,28 @@ public class FestivalDAO {
 		return fToBeReturned;
 	}
 
+	public Scene getLastSceneByNameFromFestival(Festival festival, String nomScene) {
+		Scene sceneToBeReturned = null;
+
+		try {
+			for (Scene scene : festival.getScenes()) {
+				if (scene.getName().equals(nomScene))
+					sceneToBeReturned = scene;
+			}
+
+		} catch (NullPointerException e) {
+
+		} finally {
+			return sceneToBeReturned;
+		}
+	}
+
 	public boolean deleteSceneFromFestival(Scene scene, Festival festival) {
 		return festival.getScenes().remove(scene);
+	}
+
+	public void modifNomFestival(Festival festival, String festivalNewName) {
+		festival.setName(festivalNewName);
 	}
 
 }

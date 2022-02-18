@@ -9,4 +9,8 @@ public class Utilitaires {
 		return sc.next();
 	}
 
+	public static int saisieInt() {
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
 }

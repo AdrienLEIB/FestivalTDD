@@ -1,16 +1,19 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Scene {
 
 	List<Groupe> groupes;
-
 	String name;
 
-	public Scene(List<Groupe> groupes, String name) {
-		super();
-		this.groupes = groupes;
+	public Scene() {
+
+	}
+
+	public Scene(String name) {
+		this.groupes = new ArrayList<Groupe>();
 		this.name = name;
 	}
 
@@ -28,15 +31,6 @@ public class Scene {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Scene(String name) {
-		super();
-		this.name = name;
-	}
-
-	public Scene() {
-		super();
 	}
 
 }

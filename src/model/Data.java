@@ -13,4 +13,5 @@ public class Data {
 	public static void setFestivals(List<Festival> festivals) {
 		Data.festivals = festivals;
 	}
+
 }
