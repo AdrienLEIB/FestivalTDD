@@ -56,7 +56,7 @@ class SceneControllerTest {
 		Data.getScenes().get(0).getGroupes().add(new Groupe("PSG2"));
 
 		// WHEN
-		sceneController.createGroupeAndAddToScene("groupe", "PSG");
+		sceneController.createGroupeAndAddToScene("PSG", "groupe");
 
 		// THEN
 		Scene sResult = Data.getScenes().get(Data.getScenes().size() - 1);
